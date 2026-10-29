@@ -1,0 +1,546 @@
+/* Avenza Accounts page — dark theme with accessible contrast */
+.avenza-accounts-page {
+  width: 100%;
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: clamp(18px, 2.4vw, 34px);
+  color: #f1f5f9;
+}
+
+.avenza-accounts-page *,
+.avenza-accounts-page *::before,
+.avenza-accounts-page *::after {
+  box-sizing: border-box;
+}
+
+.accounts-heading,
+.accounts-title-wrap,
+.accounts-heading-actions,
+.accounts-form-heading,
+.accounts-form-actions,
+.accounts-section-heading,
+.account-card-top,
+.account-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accounts-heading,
+.accounts-section-heading {
+  justify-content: space-between;
+}
+
+.accounts-heading {
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.accounts-title-wrap {
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.accounts-title-icon,
+.account-card-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.18);
+  color: #60a5fa;
+}
+
+.accounts-title-wrap h1 {
+  margin: 2px 0 6px;
+  color: #f8fafc;
+  font-size: clamp(25px, 3vw, 34px);
+  letter-spacing: -0.04em;
+}
+
+.accounts-title-wrap p,
+.accounts-section-heading p,
+.accounts-summary p,
+.accounts-migration-card p {
+  margin: 0;
+  color: #b6c2d2;
+  line-height: 1.6;
+}
+
+.accounts-eyebrow {
+  color: #60a5fa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.accounts-heading-actions {
+  flex-wrap: wrap;
+}
+
+.accounts-button,
+.accounts-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid #3a4758;
+  border-radius: 10px;
+  background: #263243;
+  color: #f1f5f9;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+  white-space: nowrap;
+}
+
+.accounts-button:hover,
+.accounts-icon-button:hover {
+  border-color: #60a5fa;
+  background: #304158;
+  color: #ffffff;
+}
+
+.accounts-button:focus-visible,
+.accounts-icon-button:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.55);
+  outline-offset: 2px;
+}
+
+.accounts-button:disabled,
+.accounts-icon-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.accounts-button.primary {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.accounts-button.primary:hover {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+}
+
+.accounts-button.secondary {
+  border-color: #435166;
+  background: #263243;
+  color: #f1f5f9;
+}
+
+.accounts-button.secondary:hover {
+  border-color: #60a5fa;
+  background: #33445b;
+  color: #ffffff;
+}
+
+.accounts-summary {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  border: 1px solid #3a4758;
+  border-radius: 14px;
+  background: #1c2634;
+}
+
+.accounts-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 90px;
+}
+
+.accounts-summary strong {
+  color: #f8fafc;
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.accounts-summary span {
+  color: #b6c2d2;
+  font-size: 12px;
+}
+
+.accounts-alert {
+  padding: 13px 16px;
+  margin: 0 0 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.accounts-alert.error {
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: rgba(220, 38, 38, 0.15);
+  color: #fecaca;
+}
+
+.accounts-alert.success {
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  background: rgba(22, 163, 74, 0.14);
+  color: #bbf7d0;
+}
+
+.accounts-form,
+.accounts-migration-card {
+  padding: 22px;
+  margin-bottom: 24px;
+  border: 1px solid #3a4758;
+  border-radius: 16px;
+  background: #1c2634;
+  color: #f1f5f9;
+}
+
+.accounts-form-heading {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.accounts-form-heading h2,
+.accounts-section-heading h2,
+.accounts-migration-card h2 {
+  margin: 0 0 6px;
+  color: #f8fafc;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.accounts-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.accounts-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  color: #d6deea;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.accounts-form-grid input,
+.accounts-form-grid select,
+.accounts-form-grid textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #3a4758;
+  border-radius: 9px;
+  background: #111923;
+  color: #f1f5f9;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.accounts-form-grid input::placeholder,
+.accounts-form-grid textarea::placeholder {
+  color: #91a0b4;
+  opacity: 1;
+}
+
+.accounts-form-grid select option {
+  background: #1c2634;
+  color: #f1f5f9;
+}
+
+.accounts-form-grid input:focus,
+.accounts-form-grid select:focus,
+.accounts-form-grid textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.accounts-form-grid textarea {
+  resize: vertical;
+}
+
+.accounts-notes-field {
+  grid-column: 1 / -1;
+}
+
+.accounts-form-actions {
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.accounts-list-section {
+  margin-bottom: 24px;
+}
+
+.accounts-section-heading {
+  margin-bottom: 14px;
+}
+
+.accounts-section-heading p {
+  font-size: 13px;
+}
+
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.account-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #3a4758;
+  border-radius: 16px;
+  background: #1c2634;
+  color: #f1f5f9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.account-card-top {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.account-card-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(37, 99, 235, 0.2);
+  color: #7db5ff;
+}
+
+.account-default-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 9px;
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.16);
+  color: #86efac;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.account-card h3 {
+  margin: 0 0 7px;
+  color: #f8fafc;
+  font-size: 18px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.account-type-label,
+.account-institution,
+.account-notes {
+  margin: 0 0 7px;
+  color: #b6c2d2;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.account-institution {
+  color: #e2e8f0;
+}
+
+.account-notes {
+  margin-top: 5px;
+}
+
+.account-card-actions {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #354255;
+}
+
+.account-card-actions .accounts-button {
+  min-height: 36px;
+  padding: 8px 11px;
+  font-size: 12px;
+}
+
+.accounts-icon-button {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 8px;
+}
+
+.accounts-icon-button.danger {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(127, 29, 29, 0.22);
+  color: #fca5a5;
+}
+
+.accounts-icon-button.danger:hover {
+  border-color: #f87171;
+  background: rgba(185, 28, 28, 0.25);
+  color: #fecaca;
+}
+
+.accounts-empty {
+  padding: 30px;
+  border: 1px dashed #435166;
+  border-radius: 12px;
+  color: #b6c2d2;
+  text-align: center;
+}
+
+.accounts-migration-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.accounts-migration-card > div {
+  min-width: 0;
+}
+
+.accounts-migration-card p {
+  max-width: 760px;
+  font-size: 13px;
+}
+
+.accounts-migration-card .accounts-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+}
+
+@media (max-width: 1050px) {
+  .accounts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .avenza-accounts-page {
+    padding: 16px;
+  }
+
+  .accounts-heading {
+    align-items: flex-start;
+  }
+
+  .accounts-heading-actions {
+    width: 100%;
+  }
+
+  .accounts-heading-actions .accounts-button {
+    flex: 1 1 auto;
+  }
+
+  .accounts-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .accounts-form,
+  .accounts-migration-card {
+    padding: 16px;
+  }
+
+  .accounts-form-grid,
+  .accounts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .accounts-notes-field {
+    grid-column: auto;
+  }
+
+  .accounts-migration-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .accounts-migration-card > .accounts-button {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .accounts-section-heading {
+    align-items: flex-start;
+  }
+
+  .account-card-actions .accounts-button {
+    flex: 1 1 auto;
+  }
+
+  .accounts-title-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+/* Fix account card background and text contrast */
+.avenza-accounts-page .account-card {
+  background: #1c2634 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #3a4758;
+}
+
+.avenza-accounts-page .account-card h3 {
+  color: #f8fafc !important;
+}
+
+.avenza-accounts-page .account-card .account-type-label,
+.avenza-accounts-page .account-card .account-notes {
+  color: #b6c2d2 !important;
+}
+
+.avenza-accounts-page .account-card .account-institution {
+  color: #e2e8f0 !important;
+}
+
+.avenza-accounts-page .account-card .accounts-button.secondary {
+  background: #263243 !important;
+  color: #f1f5f9 !important;
+  border-color: #435166;
+}
+
+.avenza-accounts-page .account-card .accounts-button.secondary:hover {
+  background: #33445b !important;
+  color: #ffffff !important;
+}
+
+.avenza-accounts-page .account-card .account-default-badge {
+  background: rgba(22, 163, 74, 0.16);
+  color: #86efac !important;
+}
+
+
+/* Responsive refinement for very narrow screens and touch-sized actions. */
+@media (max-width: 420px) {
+  .avenza-accounts-page { padding: 12px; }
+  .accounts-title-wrap { gap: 9px; }
+  .accounts-title-icon { width: 38px; height: 38px; }
+  .accounts-title-wrap h1 { font-size: 24px; overflow-wrap: anywhere; }
+  .accounts-heading-actions { flex-direction: column; align-items: stretch; }
+  .accounts-heading-actions .accounts-button { width: 100%; }
+  .accounts-summary { padding: 15px; }
+  .accounts-form,
+  .accounts-migration-card { padding: 14px; }
+  .accounts-form-actions,
+  .account-card-actions { flex-wrap: wrap; }
+  .accounts-form-actions > .accounts-button,
+  .account-card-actions > .accounts-button { flex: 1 1 100%; }
+  .accounts-section-heading { flex-direction: column; gap: 8px; }
+}

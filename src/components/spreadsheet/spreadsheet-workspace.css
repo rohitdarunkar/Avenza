@@ -1,0 +1,511 @@
+.sheet-workspace {
+  /* Local theme tokens: do not depend on app-wide variable names. */
+  --card-bg: #ffffff;
+  --surface-secondary: #f8fafc;
+  --border-color: #d7dee8;
+  --text-primary: #172033;
+  --text-secondary: #526176;
+  font-size:15px;
+  --sw-border:var(--border-color,#e5e7eb);
+  --sw-text:var(--text-primary,#172033);
+  --sw-muted:var(--text-secondary,#64748b);
+  color:var(--sw-text);
+  padding:clamp(16px,2.2vw,30px);
+  min-width:0
+}
+.sheet-topbar,.sheet-brand,.sheet-top-actions,.sheet-workbook-row,.sheet-workbook-select,.sheet-grid-toolbar,.sheet-grid-toolbar>div,.sheet-footer,.sheet-modal-actions {
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+.sheet-topbar {
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-bottom:20px
+}
+.sheet-brand {
+  gap:12px
+}
+.sheet-brand-icon {
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#eaf2ff;
+  color:#2563eb
+}
+.sheet-brand h1 {
+  margin:0;
+  font-size:clamp(20px,2vw,27px);
+  letter-spacing:-.035em
+}
+.sheet-brand p {
+  margin:5px 0 0;
+  color:var(--sw-muted);
+  font-size:13px
+}
+.sheet-btn,.sheet-icon-btn,.sheet-export-menu button,.sheet-grid-toolbar button {
+  border:1px solid var(--sw-border);
+  background:var(--card-bg,#fff);
+  color:var(--sw-text);
+  border-radius:9px;
+  padding:9px 12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  font-size:15px;
+  cursor:pointer;
+  white-space:nowrap
+}
+.sheet-btn.primary {
+  background:#2563eb;
+  border-color:#2563eb;
+  color:#fff
+}
+.sheet-workbook-row {
+  justify-content:space-between;
+  flex-wrap:wrap;
+  border:1px solid var(--sw-border);
+  border-radius:12px;
+  padding:12px 14px;
+  margin-bottom:12px;
+  background:var(--card-bg,#fff)
+}
+.sheet-workbook-select {
+  flex-wrap:wrap
+}
+.sheet-workbook-select label {
+  font-size:14px;
+  color:var(--sw-muted)
+}
+.sheet-workbook-select select,.sheet-merge-label select {
+  border:1px solid var(--sw-border);
+  border-radius:8px;
+  padding:9px;
+  background:var(--card-bg,#fff);
+  color:var(--sw-text);
+  min-width:180px
+}
+.sheet-export-menu {
+  display:flex;
+  gap:5px
+}
+.sheet-export-menu button {
+  padding:7px 10px
+}
+.sheet-grid-toolbar {
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin:14px 0 10px;
+  color:var(--sw-muted);
+  font-size:14px
+}
+.sheet-grid-toolbar>div {
+  flex-wrap:wrap
+}
+.sheet-tabs {
+  display:flex;
+  gap:4px;
+  overflow-x:auto;
+  border-bottom:1px solid var(--sw-border)
+}
+.sheet-tabs button {
+  border:0;
+  border-bottom:2px solid transparent;
+  background:transparent;
+  color:var(--sw-muted);
+  padding:12px 16px;
+  font-size:14px;
+  cursor:pointer;
+  white-space:nowrap
+}
+.sheet-tabs button.active {
+  color:#2563eb;
+  border-bottom-color:#2563eb;
+  font-weight:600
+}
+.sheet-grid-scroll {
+  overflow:auto;
+  max-height:calc(100vh - 370px);
+  min-height:260px;
+  border:1px solid var(--sw-border);
+  border-top:0;
+  border-radius:0 0 10px 10px;
+  background:var(--card-bg,#fff)
+}
+.sheet-grid {
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:100%;
+  width:max-content;
+  font-size:15px
+}
+.sheet-grid th,.sheet-grid td {
+  height:38px;
+  min-width:150px;
+  border-right:1px solid var(--sw-border);
+  border-bottom:1px solid var(--sw-border);
+  padding:0;
+  position:relative
+}
+.sheet-grid th {
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:var(--surface-secondary,#f8fafc);
+  font-weight:600
+}
+.sheet-grid th input,.sheet-grid td input {
+  font:inherit;
+  color:var(--sw-text);
+  width:100%;
+  height:100%;
+  min-width:125px;
+  box-sizing:border-box;
+  border:1px solid transparent;
+  background:transparent;
+  padding:8px 10px;
+  outline:none
+}
+.sheet-grid th input {
+  padding-right:26px;
+  font-weight:600
+}
+.sheet-grid td input:focus,.sheet-grid th input:focus {
+  border-color:#3b82f6;
+  box-shadow:inset 0 0 0 1px #3b82f6;
+  background:var(--card-bg,#fff)
+}
+.sheet-grid .row-number {
+  position:sticky;
+  left:0;
+  z-index:3;
+  min-width:44px;
+  width:44px;
+  text-align:center;
+  background:var(--surface-secondary,#f8fafc);
+  color:var(--sw-muted);
+  font-size:13px
+}
+.sheet-grid thead .row-number {
+  z-index:4
+}
+.sheet-grid .delete-column,.sheet-grid .row-actions button,.sheet-grid .add-column-cell button {
+  position:absolute;
+  right:4px;
+  top:50%;
+  transform:translateY(-50%);
+  border:0;
+  background:transparent;
+  color:var(--sw-muted);
+  cursor:pointer;
+  display:grid;
+  place-items:center
+}
+.sheet-grid .delete-column {
+  opacity:.65
+}
+.sheet-grid .delete-column:hover,.sheet-grid .row-actions button:hover {
+  color:#dc2626
+}
+.sheet-grid .row-actions {
+  min-width:34px;
+  width:34px;
+  border-right:0
+}
+.sheet-grid .add-column-cell {
+  min-width:32px;
+  width:32px
+}
+.sheet-footer {
+  justify-content:space-between;
+  flex-wrap:wrap;
+  color:var(--sw-muted);
+  font-size:13px;
+  padding:12px 2px
+}
+.sheet-footer .unsaved {
+  color:#d97706
+}
+.sheet-footer .saved-dot {
+  color:#16a34a
+}
+.sheet-modal-backdrop {
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(15,23,42,.48);
+  display:grid;
+  place-items:center;
+  padding:20px
+}
+.sheet-modal {
+  position:relative;
+  width:min(100%,560px);
+  background:var(--card-bg,#fff);
+  color:var(--sw-text);
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 20px 70px #0003
+}
+.sheet-modal h2 {
+  margin:0 30px 10px 0;
+  font-size:27px;
+  line-height:1.3
+}
+.sheet-modal p {
+  font-size:16px;
+  color:var(--sw-muted);
+  line-height:1.6
+}
+.sheet-modal-close {
+  position:absolute;
+  right:14px;
+  top:14px;
+  padding:6px;
+  border:0;
+  background:transparent;
+  color:var(--sw-muted);
+  cursor:pointer
+}
+.sheet-import-choice {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:22px 0
+}
+.sheet-import-choice button {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:11px;
+  padding:20px 16px;
+  text-align:left;
+  border:1px solid var(--sw-border);
+  background:var(--card-bg,#fff);
+  color:var(--sw-text);
+  border-radius:12px;
+  cursor:pointer
+}
+.sheet-import-choice button:hover {
+  border-color:#3b82f6
+}
+.sheet-import-choice button svg {
+  color:#2563eb
+}
+.sheet-import-choice button strong {
+  font-size:15px;
+  line-height:1.4
+}
+.sheet-import-choice button span {
+  font-size:15px;
+  line-height:1.55;
+  color:var(--sw-muted)
+}
+.sheet-modal-actions {
+  justify-content:flex-end;
+  margin-top:20px
+}
+.sheet-merge-label {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:15px;
+  margin-top:20px
+}
+.sheet-merge-note {
+  background:var(--surface-secondary,#f8fafc);
+  border-radius:8px;
+  padding:12px
+}
+@media(max-width:700px) {
+  .sheet-workspace {
+    padding:12px
+  }
+  .sheet-top-actions {
+    width:100%;
+    flex-wrap:wrap
+  }
+  .sheet-top-actions .sheet-btn {
+    flex:1
+  }
+  .sheet-import-choice {
+    grid-template-columns:1fr
+  }
+  .sheet-grid-scroll {
+    max-height:55vh
+  }
+  .sheet-workbook-select select {
+    min-width:140px;
+    max-width:100%
+  }
+  .sheet-footer {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:7px
+  }
+}
+
+
+/* Avenza dark mode: keep every spreadsheet surface, including modal dialogs, in sync. */
+.dashboard-app.dashboard-dark-mode .sheet-workspace {
+  --card-bg: #1b2431;
+  --surface-secondary: #222d3b;
+  --border-color: #3a4656;
+  --text-primary: #f1f5f9;
+  --text-secondary: #c2ccda;
+  color: var(--text-primary);
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-workbook-row,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid-scroll,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-modal,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-import-choice button,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-btn,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-icon-btn,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-export-menu button,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid-toolbar button,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-workbook-select select,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-merge-label select {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid th,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid .row-number,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-merge-note {
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid td {
+  background-color: #1b2431;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid td input,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid th input {
+  color: var(--text-primary);
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid td input:focus,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid th input:focus {
+  background-color: #273548;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-import-choice button:hover,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-btn:hover,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid-toolbar button:hover,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-export-menu button:hover {
+  background-color: #2a394c;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-btn.primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-import-choice button strong,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-modal h2,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-brand h1 {
+  color: #f8fafc;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-import-choice button span,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-modal p,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-workbook-select label,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-brand p,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-grid-toolbar,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-footer,
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-tabs button {
+  color: var(--text-secondary);
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-tabs button.active {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-modal-close {
+  color: #c2ccda;
+}
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-modal-backdrop {
+  background: rgba(2, 6, 23, 0.72);
+}
+
+/* Readability sizing retained, with stronger contrast for the import choices. */
+.sheet-workspace { font-size: 15px; }
+.sheet-workspace .sheet-modal h2 { font-size: 27px; }
+.sheet-workspace .sheet-modal p { font-size: 16px; line-height: 1.6; }
+.sheet-workspace .sheet-import-choice button strong { font-size: 16px; }
+.sheet-workspace .sheet-import-choice button span { font-size: 16px; line-height: 1.6; }
+.sheet-workspace .sheet-btn,
+.sheet-workspace .sheet-grid-toolbar button,
+.sheet-workspace .sheet-export-menu button { font-size: 15px; }
+
+
+/* Workspace expansion and spreadsheet sizing controls */
+.sheet-workspace-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  overflow: auto;
+  padding: 18px 22px 14px;
+  background: var(--app-bg, #11161f);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.sheet-workspace-expanded .sheet-grid-scroll {
+  flex: 1 1 auto;
+  min-height: 240px;
+  max-height: none;
+  height: auto;
+}
+.sheet-workspace-expanded .sheet-footer { flex-shrink: 0; }
+.sheet-column-resizer {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 8px;
+  height: 100%;
+  cursor: col-resize;
+  touch-action: none;
+  z-index: 5;
+}
+.sheet-column-resizer:hover,
+.sheet-column-resizer:focus-visible { background: #3b82f6; opacity: .75; }
+.sheet-row-resizer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 7px;
+  cursor: row-resize;
+  touch-action: none;
+  z-index: 5;
+}
+.sheet-row-resizer:hover,
+.sheet-row-resizer:focus-visible { background: #3b82f6; opacity: .75; }
+.sheet-grid td, .sheet-grid th { box-sizing: border-box; }
+.sheet-grid td input { text-overflow: clip; }
+.sheet-grid-scroll { overscroll-behavior: contain; }
+@media (max-width: 700px) {
+  .sheet-workspace-expanded { padding: 10px; }
+  .sheet-workspace-expanded .sheet-topbar { gap: 8px; }
+  .sheet-column-resizer { width: 12px; right: -5px; }
+}
+
+
+/* Hide/show column controls */
+.sheet-grid-actions { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.sheet-column-menu-wrap { position:relative; }
+.sheet-column-menu {
+  position:absolute; top:calc(100% + 8px); right:0; z-index:50;
+  width:min(300px, calc(100vw - 32px)); max-height: min(420px, 60vh); overflow:auto;
+  padding:10px; border:1px solid var(--sw-border); border-radius:12px;
+  background:var(--card-bg,#fff); color:var(--sw-text);
+  box-shadow:0 12px 32px rgba(0,0,0,.22);
+}
+.sheet-column-menu-heading { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:4px 4px 10px; border-bottom:1px solid var(--sw-border); margin-bottom:6px; }
+.sheet-column-menu-heading button { border:0; background:transparent; color:#2563eb; cursor:pointer; font-size:14px; padding:5px; }
+.sheet-column-menu label { display:flex; align-items:center; gap:10px; min-height:38px; padding:5px 6px; border-radius:7px; cursor:pointer; font-size:14px; }
+.sheet-column-menu label:hover { background:var(--surface-secondary,#f8fafc); }
+.sheet-column-menu label span { min-width:0; overflow-wrap:anywhere; }
+.sheet-column-menu input[type="checkbox"] { width:16px; height:16px; accent-color:#2563eb; flex:0 0 auto; }
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-column-menu { background:var(--card-bg); color:var(--text-primary); border-color:var(--border-color); }
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-column-menu-heading { border-color:var(--border-color); }
+.dashboard-app.dashboard-dark-mode .sheet-workspace .sheet-column-menu label:hover { background:var(--surface-secondary); }
+@media (max-width:700px) { .sheet-column-menu { right:auto; left:0; } .sheet-grid-actions { width:100%; } }

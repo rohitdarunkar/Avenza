@@ -1,0 +1,568 @@
+
+.budgets-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 30px 56px;
+  color: var(--text-primary, #182235);
+  background: transparent;
+}
+
+/* Header */
+.budgets-header {
+  margin-bottom: 26px;
+}
+
+.budgets-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary, #667085);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 22px;
+}
+
+.budgets-title-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.budgets-title-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #eaf2ff;
+  color: #1769e8;
+}
+
+.budgets-eyebrow {
+  display: block;
+  color: #1769e8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.budgets-title-row h1 {
+  margin: 4px 0;
+  color: var(--text-primary, #182235);
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.budgets-title-row p,
+.budgets-form-panel p {
+  margin: 0;
+  color: var(--text-secondary, #667085);
+  font-size: 14px;
+}
+
+/* Overview cards */
+.budgets-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.budgets-overview article,
+.budgets-form-panel,
+.budget-card {
+  background: var(--surface, #fff);
+  color: var(--text-primary, #182235);
+  border: 1px solid var(--border-color, #e8edf4);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #10213a05;
+}
+
+.budgets-overview article {
+  padding: 20px;
+}
+
+.budgets-overview article > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary, #667085);
+  font-size: 13px;
+}
+
+.budgets-overview article > strong {
+  display: block;
+  color: var(--text-primary, #182235);
+  font-size: 27px;
+  margin: 13px 0 5px;
+  letter-spacing: -0.03em;
+}
+
+.budgets-overview small {
+  color: var(--text-secondary, #667085);
+  font-size: 12px;
+}
+
+.budget-alert-card > strong {
+  color: #dc3f48;
+}
+
+/* Create budget panel */
+.budgets-form-panel {
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.budgets-form-panel h2,
+.budgets-section-heading h2 {
+  margin: 6px 0 7px;
+  color: var(--text-primary, #182235);
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+
+.budgets-form-panel p {
+  color: var(--text-secondary, #667085);
+}
+
+.budgets-form-panel form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 13px;
+  align-items: end;
+  margin-top: 20px;
+}
+
+.budgets-form-panel label {
+  display: grid;
+  gap: 7px;
+  color: var(--text-secondary, #667085);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.budgets-form-panel input,
+.budgets-form-panel select {
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color, #dce3ed);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--input-background, var(--surface, #fff));
+  color: var(--text-primary, #182235);
+  font: inherit;
+  font-size: 14px;
+}
+
+.budgets-form-panel input::placeholder {
+  color: var(--text-muted, #8a94a6);
+  opacity: 1;
+}
+
+.budgets-form-panel input:focus,
+.budgets-form-panel select:focus {
+  outline: none;
+  border-color: #1769e8;
+  box-shadow: 0 0 0 3px #1769e81a;
+}
+
+.budgets-form-panel form button {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 10px;
+  background: #1769e8;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.budgets-form-panel form button:hover {
+  background: #0f5ed7;
+}
+
+.budgets-form-panel form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.budgets-error {
+  margin: 12px 0 0;
+  color: #c8323e;
+  font-size: 13px;
+}
+
+/* Current month section */
+.budgets-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.budgets-section-heading h2 {
+  color: var(--text-primary, #182235);
+}
+
+.budgets-section-heading > span {
+  color: var(--text-secondary, #667085);
+  font-size: 13px;
+}
+
+/* Budget cards */
+.budgets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.budget-card {
+  padding: 21px;
+}
+
+.budget-card-top,
+.budget-card-top > div {
+  display: flex;
+  align-items: center;
+}
+
+.budget-card-top {
+  justify-content: space-between;
+}
+
+.budget-card-top > div {
+  gap: 10px;
+}
+
+.budget-category-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #f0f5ff;
+  color: #1769e8;
+}
+
+.budget-card-top strong {
+  color: var(--text-primary, #182235);
+  font-size: 15px;
+}
+
+.budget-card-top button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary, #667085);
+  cursor: pointer;
+  padding: 7px;
+}
+
+.budget-card-top button:hover {
+  color: var(--text-primary, #182235);
+}
+
+.budget-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 21px 0 12px;
+}
+
+.budget-numbers strong {
+  color: var(--text-primary, #182235);
+  font-size: 25px;
+  letter-spacing: -0.03em;
+}
+
+.budget-numbers span {
+  color: var(--text-secondary, #667085);
+  font-size: 13px;
+}
+
+.budget-progress-track {
+  height: 8px;
+  border-radius: 20px;
+  background: var(--progress-track, #edf1f6);
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #1769e8;
+  transition: width 0.25s;
+}
+
+.budget-progress-fill.near {
+  background: #e6a322;
+}
+
+.budget-progress-fill.over {
+  background: #dc3f48;
+}
+
+.budget-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  color: var(--text-secondary, #667085);
+  font-size: 12px;
+}
+
+.budget-over-text {
+  color: #dc3f48;
+  font-weight: 700;
+}
+
+.budget-status {
+  margin: 14px 0 0;
+  color: #32835c;
+  font-size: 12px;
+}
+
+.budget-status.warning {
+  color: #b67b12;
+}
+
+.budget-status.danger {
+  color: #dc3f48;
+}
+
+/* Empty state */
+.budgets-empty {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 44px 20px;
+  border: 1px dashed var(--border-color, #dce3ed);
+  border-radius: 18px;
+  color: var(--text-secondary, #667085);
+  background: var(--surface, transparent);
+}
+
+.budgets-empty strong {
+  color: var(--text-primary, #182235);
+}
+
+.budgets-empty p {
+  margin: 0;
+  color: var(--text-secondary, #667085);
+  font-size: 13px;
+}
+
+/* Dark mode — match Avenza's existing dark pages */
+.dark .budgets-page {
+  --budgets-surface: #1b222c;
+  --budgets-text: #f1f5f9;
+  --budgets-muted: #a3afc2;
+  --budgets-border: #303b49;
+
+  --surface: #1b222c;
+  --text-primary: #f1f5f9;
+  --text-secondary: #a3afc2;
+  --text-muted: #8290a5;
+  --border-color: #303b49;
+  --input-background: #252f3b;
+  --progress-track: #303b49;
+}
+
+.dark .budgets-overview article,
+.dark .budgets-form-panel,
+.dark .budget-card {
+  background: #1b222c;
+  color: #f1f5f9;
+  border-color: #303b49;
+  box-shadow: none;
+}
+
+.dark .budgets-overview article > span,
+.dark .budgets-overview small,
+.dark .budgets-form-panel p,
+.dark .budgets-form-panel label,
+.dark .budgets-section-heading > span,
+.dark .budget-numbers span,
+.dark .budget-card-footer {
+  color: #a3afc2;
+}
+
+.dark .budgets-overview article > strong,
+.dark .budgets-form-panel h2,
+.dark .budgets-section-heading h2,
+.dark .budget-card-top strong,
+.dark .budget-numbers strong,
+.dark .budgets-empty strong {
+  color: #f1f5f9;
+}
+
+.dark .budgets-form-panel input,
+.dark .budgets-form-panel select {
+  background: #252f3b;
+  color: #f1f5f9;
+  border-color: #3a4656;
+}
+
+.dark .budgets-form-panel input::placeholder {
+  color: #8290a5;
+}
+
+.dark .budgets-form-panel select option {
+  background: #252f3b;
+  color: #f1f5f9;
+}
+
+.dark .budget-progress-track {
+  background: #303b49;
+}
+
+.dark .budgets-empty {
+  background: #1b222c;
+  border-color: #303b49;
+  color: #a3afc2;
+}
+
+.dark .budgets-empty p {
+  color: #a3afc2;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .budgets-page {
+    padding: 22px 16px 40px;
+  }
+
+  .budgets-overview {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .budgets-overview article {
+    padding: 16px;
+  }
+
+  .budgets-overview article > strong {
+    font-size: 23px;
+    margin: 9px 0 3px;
+  }
+
+  .budgets-form-panel {
+    padding: 18px;
+  }
+
+  .budgets-form-panel form {
+    grid-template-columns: 1fr;
+  }
+
+  .budgets-form-panel form button {
+    width: 100%;
+  }
+
+  .budgets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .budgets-section-heading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .budgets-title-row h1 {
+    font-size: 26px;
+  }
+}
+
+
+/*
+ * Avenza dashboard dark theme.
+ * The authenticated dashboard uses .dashboard-app.dashboard-dark-mode,
+ * not the standalone .dark class. Keep this block after all base styles
+ * so no light-surface rules can override these budget surfaces.
+ */
+.dashboard-app.dashboard-dark-mode .budgets-page {
+  --surface: #1b222c;
+  --text-primary: #f1f5f9;
+  --text-secondary: #a3afc2;
+  --text-muted: #8290a5;
+  --border-color: #303b49;
+  --input-background: #252f3b;
+  --progress-track: #303b49;
+  color: #f1f5f9;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-overview article,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel,
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-card,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-empty {
+  background-color: #1b222c !important;
+  color: #f1f5f9 !important;
+  border-color: #303b49 !important;
+  box-shadow: none !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-overview article > span,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-overview small,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel p,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel label,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-section-heading > span,
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-numbers span,
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-card-footer,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-empty,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-empty p {
+  color: #a3afc2 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-overview article > strong,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel h2,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-section-heading h2,
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-card-top strong,
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-numbers strong,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-empty strong {
+  color: #f1f5f9 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel input,
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel select {
+  background-color: #252f3b !important;
+  color: #f1f5f9 !important;
+  border-color: #3a4656 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel input::placeholder {
+  color: #8290a5 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-form-panel select option {
+  background-color: #252f3b !important;
+  color: #f1f5f9 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-progress-track {
+  background-color: #303b49 !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budget-category-icon {
+  background-color: #263b59 !important;
+  color: #8bbcff !important;
+}
+
+.dashboard-app.dashboard-dark-mode .budgets-page .budgets-title-icon {
+  background-color: #263b59 !important;
+  color: #8bbcff !important;
+}
